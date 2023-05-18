@@ -17,7 +17,10 @@ const getMessages = async (
                 createdAt: 'asc'
             }
         })
+        return messages
     }catch(err){
         return []
     }
 }
+
+export default getMessages;
