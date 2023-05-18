@@ -5,7 +5,7 @@ import useOtherUser from "@/app/hooks/useOtherUser"
 import { Conversation, User } from "@prisma/client"
 import Link from "next/link"
 import { useMemo } from "react"
-import { HiChevronLeft } from "react-icons/hi2"
+import { HiChevronLeft, HiEllipsisHorizontal, HiEllipsisVertical } from "react-icons/hi2"
 
 interface HeaderProps {
     conversation: Conversation & {
@@ -38,6 +38,11 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
                     </div>
                 </div>
             </div>
+            <HiEllipsisVertical 
+            className="text-sky-500 cursor-pointer hover:text-sky-600 transition" 
+            onClick={() => {}} 
+            size={32}
+            />
         </div>
     )
 }
