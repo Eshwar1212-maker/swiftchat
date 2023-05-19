@@ -66,7 +66,7 @@ export async function POST(
     });
 
     // await pusherServer.trigger(conversationId, 'messages:new', newMessage);
-
+    
     // const lastMessage = updatedConversation.messages[updatedConversation.messages.length - 1];
 
     // updatedConversation.users.map((user) => {
