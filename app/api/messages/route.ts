@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import prisma from "@/app/libs/prismadb";
 
@@ -40,8 +39,6 @@ export async function POST(
         },
       }
     });
-
-    
     const updatedConversation = await prisma.conversation.update({
       where: {
         id: conversationId
@@ -63,12 +60,7 @@ export async function POST(
         }
       }
     });
-
-
     const lastMessage = updatedConversation.messages[updatedConversation.messages.length - 1];
-
-   
-
     return NextResponse.json(newMessage)
   } catch (error) {
     console.log(error, 'ERROR_MESSAGES')
