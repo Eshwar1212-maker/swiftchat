@@ -3,7 +3,8 @@
 import useConversation from "@/app/hooks/useConversation"
 import { FullMessageType } from "@/app/types"
 import MessageBox from "./MessageBox"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import axios from "axios"
 
 interface  BodyProps{
   initialMessages: FullMessageType[]
@@ -15,7 +16,12 @@ const Body: React.FC<BodyProps> = ({initialMessages}) => {
   const [messages, setMessages] = useState(initialMessages)
   const bottomRef = useRef<HTMLDivElement>(null)
   const {conversationId} = useConversation()
-console.log(messages);
+  console.log(messages);
+
+  useEffect(() => {
+    axios.post(`/api/conversations/${conversationId}/seen`)
+  }, [conversationId])
+  
 
 
   return (
