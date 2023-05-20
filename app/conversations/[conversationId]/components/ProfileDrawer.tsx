@@ -23,7 +23,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
     isOpen, onClose, data
 }) => {
     const otherUser = useOtherUser(data)
-    const [open, setIsOpen] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     const joinedDate = useMemo(() => {
         return format(new Date(otherUser.createdAt), "PP")
@@ -42,10 +42,16 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
     return (
         <>
         <Modal
-        isOpen
-        onClose={() => {}}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
         
-         />
+         >
+            <div
+            className="bg-white p-5"
+            >
+                <p>Hello Modal</p>
+            </div>
+         </Modal>
             <Transition.Root
                 show={isOpen}
                 as={Fragment}
