@@ -24,6 +24,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 }) => {
     const otherUser = useOtherUser(data)
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [confirmOpen, setConfirmOpen] = useState(false)
 
     const joinedDate = useMemo(() => {
         return format(new Date(otherUser.createdAt), "PP")
@@ -42,7 +43,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
     return (
         <>
         <Modal
-        isOpen={isModalOpen}
+        isOpen={confirmOpen}
         onClose={() => setIsModalOpen(false)}
         
          >
