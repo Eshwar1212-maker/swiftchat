@@ -4,7 +4,7 @@ import useOtherUser from "@/app/hooks/useOtherUser"
 import { Dialog, Transition } from "@headlessui/react"
 import { Conversation, User } from "@prisma/client"
 import { format } from "date-fns"
-import { Fragment, useMemo } from "react"
+import { Fragment, useMemo, useState } from "react"
 import Modal from "@/app/components/modal/Modal"
 import { IoClose, IoTrash } from 'react-icons/io5'
 
@@ -23,6 +23,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
     isOpen, onClose, data
 }) => {
     const otherUser = useOtherUser(data)
+    const [open, setIsOpen] = useState(false)
+
     const joinedDate = useMemo(() => {
         return format(new Date(otherUser.createdAt), "PP")
     }, [otherUser.createdAt])
