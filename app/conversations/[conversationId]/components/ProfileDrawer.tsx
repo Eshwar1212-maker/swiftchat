@@ -43,7 +43,10 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 
     return (
         <>
-            <ConfirmModal isOpen={confirmOpen} onClose={() => setIsModalOpen(false)} />
+            <ConfirmModal
+             isOpen={confirmOpen}
+             onClose={() => setIsModalOpen(false)} 
+             />
 
                 <Transition.Root
                     show={isOpen}
