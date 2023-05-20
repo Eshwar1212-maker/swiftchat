@@ -58,7 +58,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
               <Dialog.Panel 
                 className="
                   relative 
-                  transform 
+                  transform
                   overflow-hidden 
                   rounded-lg 
                   bg-white 
