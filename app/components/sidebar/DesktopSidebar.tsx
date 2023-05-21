@@ -1,5 +1,5 @@
 'use client';
-
+import SettingsModal from "./SettingsModal";
 import DesktopItem from "./DesktopItem";
 import useRoutes from "@/app/hooks/useRoutes";
 import { useState } from "react";
@@ -20,6 +20,12 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
 
   return ( 
     <>
+      <SettingsModal
+      currentUser={currentUser}
+      isOpen={isOpen}
+      onClose={() => setIsOpen(false)}
+
+       />
       <div className="
         hidden 
         lg:fixed 
