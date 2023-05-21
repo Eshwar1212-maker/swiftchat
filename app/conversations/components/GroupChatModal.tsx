@@ -50,7 +50,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
             toast.error('Somethng went wrong')
         })
         .finally(() => {
-            
+            setIsLoading(false)
         })
     }
   return (
