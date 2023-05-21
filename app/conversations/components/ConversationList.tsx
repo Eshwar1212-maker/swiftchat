@@ -27,9 +27,15 @@ const ConversationList: React.FC<ConversationListProps> = ({
   const session = useSession();
   const { conversationId, isOpen } = useConversation();
 
+  interface ConversationListProps{
+    initialItems: FullConversationType[]
+    users: User[]
+  }
+
   return (
     <>
       <GroupChatModal 
+      users={users}
       isOpen={isModalOpen}
       onClose={() => setIsModalOpen(false)}
       />
