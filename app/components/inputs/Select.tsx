@@ -10,11 +10,15 @@ interface SelectProps{
 
 
 const Select: React.FC<SelectProps> = ({
-
+    label, value, onChange, options, disabled
 }) => {
   return (
-    <div>
-
+    <div
+    className="z-[100] "
+    >
+        <label className="block text-sm font-medium leading-6 text-gray-900">
+            {label}
+        </label>
     </div>
   )
 }
