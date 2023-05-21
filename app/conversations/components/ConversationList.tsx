@@ -3,6 +3,7 @@
 import { User } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import GroupChatModal from "./GroupChatModal";
 import { useEffect, useMemo, useState } from "react";
 import { MdOutlineGroupAdd } from 'react-icons/md';
 import clsx from "clsx";
@@ -28,6 +29,10 @@ const ConversationList: React.FC<ConversationListProps> = ({
 
   return (
     <>
+      <GroupChatModal 
+      isOpen={isModalOpen}
+      onClose={() => setIsModalOpen(false)}
+      />
       <aside className={clsx(`
         fixed 
         inset-y-0 
