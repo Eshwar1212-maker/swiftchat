@@ -1,5 +1,6 @@
 "use client"
 
+import Modal from "@/app/components/modal/Modal"
 import { User } from "@prisma/client"
 import axios from "axios"
 import { useRouter } from "next/navigation"
@@ -54,9 +55,16 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
         })
     }
   return (
-    <div>
-        GroupChatModal
-    </div>
+    <Modal
+    isOpen={isOpen}
+    onClose={onClose}
+    >
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="space-y-12">
+
+            </div>
+        </form>
+    </Modal>
   )
 }
 
