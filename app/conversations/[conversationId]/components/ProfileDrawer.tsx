@@ -8,6 +8,7 @@ import { format } from "date-fns"
 import { Fragment, useMemo, useState } from "react"
 import Modal from "@/app/components/modal/Modal"
 import { IoClose, IoTrash } from 'react-icons/io5'
+import AvatarGroup from "@/app/components/AvatarGroup"
 
 
 
@@ -110,7 +111,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                                 <div className="relative mt-6 flex-1 px-4 sm:px-6">
                                                     <div className="flex flex-col items-center">
                                                         <div className="mb-2">
-                                                            <Avatar user={otherUser} />
+                                                           {data.isGroup ? <AvatarGroup users={data.users}/>  : <Avatar user={otherUser} />}
                                                         </div>
                                                         <div>
                                                             {title}
