@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { pusherServer } from "@/app/libs/pusher";
+
 
 import getCurrentUser from "@/app/actions/getCurrentUser";
 // import { pusherServer } from '@/app/libs/pusher'
@@ -65,16 +67,16 @@ export async function POST(
       }
     });
 
-    // await pusherServer.trigger(conversationId, 'messages:new', newMessage);
+    await pusherServer.trigger(conversationId, 'messages:new', newMessage);
     
-    // const lastMessage = updatedConversation.messages[updatedConversation.messages.length - 1];
+    const lastMessage = updatedConversation.messages[updatedConversation.messages.length - 1];
 
-    // updatedConversation.users.map((user) => {
-    //   pusherServer.trigger(user.email!, 'conversation:update', {
-    //     id: conversationId,
-    //     messages: [lastMessage]
-    //   });
-    // });
+    updatedConversation.users.map((user) => {
+      pusherServer.trigger(user.email!, 'conversation:update', {
+        id: conversationId,
+        messages: [lastMessage]
+      });
+    });
 
     return NextResponse.json(newMessage)
   } catch (error) {
