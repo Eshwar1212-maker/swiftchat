@@ -2,6 +2,7 @@
 
 import { User } from "@prisma/client"
 import axios from "axios"
+import {AiOutlineEdit} from 'react-icons/ai'
 import Modal from "../modal/Modal"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
@@ -10,7 +11,6 @@ import { toast } from "react-hot-toast"
 import Input from "../inputs/Input"
 import Image from "next/image"
 import { CldUploadButton } from "next-cloudinary"
-import Button from "../Button"
 
 
 interface SettingsModal {
@@ -72,7 +72,6 @@ const SettingsModal: React.FC<SettingsModal> = ({
                         <h2 className="text-base font-semibold leading-7 text-gray-900">
                             Profile
                         </h2>
-                        <p className="mt-1 text-sm leading-6 text-gray-600">Edit</p>
                         <div
                             className="mt-10 flex flex-col gap-y-8"
                         >
@@ -92,22 +91,22 @@ const SettingsModal: React.FC<SettingsModal> = ({
                                 </label>
                                 <div className="mt-2 flex items-center">
                                     <Image
-                                        width="48"
-                                        height="48"
-                                        className="rounded-full"
+                                        width="160"
+                                        height="200"
+                                        className="rounded-md h-[170px]"
                                         alt="Avatar"
                                         src={image || currentUser?.image || "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"}
                                     />
                                     <CldUploadButton
                                         options={{ maxFiles: 1 }}
                                         onUpload={handleUpload}
-                                        uploadPreset="pgc9ehd5"
-                                    >
+                                        uploadPreset="d49kth4r"
+                                        >
                                         <button
                                             className="text-sm pl-3"
                                             type="button"
                                         >
-                                            Change
+                                            <AiOutlineEdit size={23}/>
                                         </button>
                                     </CldUploadButton>
                                 </div>
