@@ -34,7 +34,7 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({
           `}>
             <Image
               fill
-              src={user?.image || '/images/placeholder.jpg'}
+              src={user?.image || 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png'}
               alt="Avatar"
             />
         </div>
