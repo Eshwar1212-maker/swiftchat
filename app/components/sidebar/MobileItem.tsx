@@ -24,7 +24,7 @@ const MobileItem: React.FC<MobileItemProps> = ({
   return ( 
     <Link 
       onClick={handleClick} 
-      href={''} 
+      href={href} 
       className={clsx(`
         group 
         flex 
