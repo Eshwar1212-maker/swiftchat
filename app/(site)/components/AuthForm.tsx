@@ -107,8 +107,10 @@ const AuthForm = () => {
                     className='space-y-6 
                 '
                 >
+                    <p className='text-[14px] font-thin'>Please continue to the login page to use our demo credentials</p>
                     {
                         variant === 'REGISTER' && (
+                            
                             <Input
                                 id="name"
                                 label="Name"
@@ -118,9 +120,10 @@ const AuthForm = () => {
                             />
                         )
                     }
+                    
                     <Input
                         id="email"
-                        label="Email address"
+                        label="Email address(Demo email: testaccount@gmail.com)"
                         type='email'
                         register={register}
                         errors={errors}
@@ -129,7 +132,7 @@ const AuthForm = () => {
                     />
                     <Input
                         id="password"
-                        label="Password"
+                        label="Password(Demo password: testtest)"
                         type='password'
                         register={register}
                         errors={errors}
